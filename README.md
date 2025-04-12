@@ -1,4 +1,6 @@
-# CPP Module 03 – Inheritance
+# CPP Module 03
+
+## Inheritance
 
 This module focuses on C++ inheritance. You’ll learn how to create and extend classes, how to chain constructors/destructors, and even explore multiple inheritance. Through four exercises, you will build a hierarchy of robot-like classes: starting with a base class (`ClapTrap`), and then extending it with `ScavTrap`, `FragTrap`, and finally merging behaviors in a multiple-inheritance monster called `DiamondTrap`.
 
