@@ -6,7 +6,7 @@
 /*   By: mikelitoris <mikelitoris@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 12:04:44 by mikelitoris       #+#    #+#             */
-/*   Updated: 2025/05/14 16:53:36 by mikelitoris      ###   ########.fr       */
+/*   Updated: 2025/05/20 16:02:18 by mikelitoris      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,13 @@ FragTrap::~FragTrap()
 
 FragTrap	&FragTrap::operator=(const FragTrap &src)
 {
-	_name = src._name;
-	_hitPoints = src._hitPoints;
-	_energyPoints = src._energyPoints;
-	_attackDamage = src._attackDamage;
+	if (this != &src)
+	{
+		_name = src._name;
+		_hitPoints = src._hitPoints;
+		_energyPoints = src._energyPoints;
+		_attackDamage = src._attackDamage;
+	}
 	return (*this);
 }
 

@@ -1,6 +1,6 @@
 # ==== Compiler & Flags ====
 CXX		:= c++
-CXXFLAGS	:= -Wall -Wextra -Werror -std=c++98
+CXXFLAGS	:= -Wall -Wextra -Werror -std=c++98 -Wshadow
 
 # ==== Project Name ====
 NAME		:= ex02

@@ -1,4 +1,6 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+make: *** No rule to make target 'all'.  Stop.
+
 # GNU Make 4.3
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2020 Free Software Foundation, Inc.
@@ -6,7 +8,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Wed May 14 16:25:34 2025
+# Make data base, printed on Tue May 20 16:09:58 2025
 
 # Variables
 
@@ -49,11 +51,11 @@ XDG_DATA_DIRS = /usr/share/ubuntu:/usr/share/gnome:/home/mikelitoris/.local/shar
 # automatic
 %F = $(notdir $%)
 # environment
-VSCODE_CODE_CACHE_PATH = /home/mikelitoris/.config/Code/CachedData/2fc07b811f760549dab9be9d2bedd06c51dfcb9a
+VSCODE_CODE_CACHE_PATH = /home/mikelitoris/.config/Code/CachedData/848b80aeb52026648a8ff9f7c45a9b0a80641e2e
 # environment
 LANG = C
 # environment
-XAUTHORITY = /run/user/1000/.mutter-Xwaylandauth.B3JK62
+XAUTHORITY = /run/user/1000/.mutter-Xwaylandauth.67US62
 # default
 .LOADED := 
 # default
@@ -63,7 +65,7 @@ MEMORY_PRESSURE_WATCH = /sys/fs/cgroup/user.slice/user-1000.slice/user@1000.serv
 # makefile
 MAKEFLAGS = pqrR
 # environment
-DBUS_STARTER_ADDRESS = unix:path=/run/user/1000/bus,guid=e607f3ba57e63090290e47d76824a1b5
+DBUS_STARTER_ADDRESS = unix:path=/run/user/1000/bus,guid=a1d9cf88cd54dc673d7b52b7682c661b
 # makefile
 CURDIR := /home/mikelitoris/42/Rank_4/CPPs/CPP_MODULE_03
 # environment
@@ -93,19 +95,19 @@ MAKEFILE_LIST :=
 # automatic
 @F = $(notdir $@)
 # environment
-VSCODE_PID = 8714
+VSCODE_PID = 9837
 # environment
 XDG_SESSION_TYPE = wayland
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # environment
-SESSION_MANAGER = local/mikelitoris-ASUS-EXPERTBOOK-B1402CBA:@/tmp/.ICE-unix/1932,unix/mikelitoris-ASUS-EXPERTBOOK-B1402CBA:/tmp/.ICE-unix/1932
+SESSION_MANAGER = local/mikelitoris-ASUS-EXPERTBOOK-B1402CBA:@/tmp/.ICE-unix/1812,unix/mikelitoris-ASUS-EXPERTBOOK-B1402CBA:/tmp/.ICE-unix/1812
 # automatic
 *F = $(notdir $*)
 # environment
 CHROME_DESKTOP = code.desktop
 # environment
-DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus,guid=e607f3ba57e63090290e47d76824a1b5
+DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus,guid=a1d9cf88cd54dc673d7b52b7682c661b
 # automatic
 <D = $(patsubst %/,%,$(dir $<))
 # environment
@@ -139,7 +141,7 @@ LC_MONETARY = pt_PT.UTF-8
 # environment
 LC_TIME = pt_PT.UTF-8
 # environment
-INVOCATION_ID = 4e1b659cabac4928b6cec94ba1e365b6
+INVOCATION_ID = 413145ad85044d1caad1eb79fc6da547
 # environment
 USERNAME = mikelitoris
 # environment
@@ -167,7 +169,7 @@ GIO_LAUNCHED_DESKTOP_FILE = /usr/share/applications/code.desktop
 # makefile
 .DEFAULT_GOAL := 
 # environment
-SYSTEMD_EXEC_PID = 1932
+SYSTEMD_EXEC_PID = 1812
 # environment
 DISPLAY = :0
 # environment
@@ -177,7 +179,7 @@ GTK_MODULES = gail:atk-bridge
 # default
 MAKE_VERSION := 4.3
 # environment
-MANAGERPID = 1708
+MANAGERPID = 1610
 # environment
 DBUS_STARTER_BUS_TYPE = session
 # environment
@@ -185,7 +187,7 @@ DEBUGINFOD_URLS = https://debuginfod.ubuntu.com
 # environment
 LC_MEASUREMENT = pt_PT.UTF-8
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 8714
+GIO_LAUNCHED_DESKTOP_FILE_PID = 9837
 # environment
 _ = /usr/share/code/code
 # environment
@@ -195,7 +197,7 @@ XDG_RUNTIME_DIR = /run/user/1000
 # environment
 LC_CTYPE = pt_PT.UTF-8
 # environment
-JOURNAL_STREAM = 8:22655
+JOURNAL_STREAM = 8:7139
 # environment
 XDG_SESSION_CLASS = user
 # environment
@@ -207,7 +209,7 @@ QT_IM_MODULE = ibus
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-VSCODE_IPC_HOOK = /run/user/1000/vscode-af1ed2d2-1.98-main.sock
+VSCODE_IPC_HOOK = /run/user/1000/vscode-af1ed2d2-1.10-main.sock
 # environment
 IM_CONFIG_PHASE = 1
 # default
@@ -257,6 +259,7 @@ Makefile:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
+ 
 
 # Not a target:
 all:
@@ -292,10 +295,7 @@ GNUmakefile:
 
 # strcache performance: lookups = 22 / hit rate = 13%
 # hash-table stats:
- 
-make: *** No rule to make target 'all'.  Stop.
-
 # Load=19/8192=0%, Rehash=0, Collisions=0/22=0%
-# Finished Make data base on Wed May 14 16:25:34 2025
+# Finished Make data base on Tue May 20 16:09:58 2025
 
  

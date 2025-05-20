@@ -1,0 +1,42 @@
+[33mcommit 5bc1bf13cfcc646c0b627837c89af187a89956bc[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Miguel Couceiro <miguelafcdc@gmail.com>
+Date:   Tue May 20 16:16:22 2025 +0100
+
+    Ready 4 Evaluation. Status: 100% Completed
+
+[33mcommit 08298535eb13086002c47d200021f0447f8da561[m
+Merge: e59c8c0 5d02fa9
+Author: Miguel Couceiro <miguelafcdc@gmail.com>
+Date:   Tue May 20 12:31:20 2025 +0100
+
+    Merge remote-tracking branch 'refs/remotes/origin/main'
+
+[33mcommit e59c8c0dec3e15941157bff3aae7fd15f713c279[m
+Author: Miguel Couceiro <miguelafcdc@gmail.com>
+Date:   Tue May 20 12:30:16 2025 +0100
+
+    Missing final tests. Status: 99%
+
+[33mcommit 5d02fa92221147efb7e9aa12f7f16e80fee5dec7[m
+Author: madao-cc <143662001+madao-cc@users.noreply.github.com>
+Date:   Sat Apr 12 18:32:24 2025 +0100
+
+    Update README.md
+
+[33mcommit 0a6e13f1026d33588327fb81e87c344d41f316e4[m
+Author: madao-cc <143662001+madao-cc@users.noreply.github.com>
+Date:   Sat Apr 12 18:28:40 2025 +0100
+
+    Update README.md
+
+[33mcommit f37d91dc8967fc330935c64889bef24d2d5b8df0[m
+Author: Miguel Couceiro <miguelafcdc@gmail.com>
+Date:   Sat Apr 12 18:25:04 2025 +0100
+
+    1st, From Home, status: complete
+
+[33mcommit ceef790b9e18f5589706337fc1b6cad538feadf9[m
+Author: madao-cc <143662001+madao-cc@users.noreply.github.com>
+Date:   Sat Apr 12 18:22:47 2025 +0100
+
+    Initial commit

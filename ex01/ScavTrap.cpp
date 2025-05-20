@@ -6,7 +6,7 @@
 /*   By: mikelitoris <mikelitoris@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 10:35:41 by mikelitoris       #+#    #+#             */
-/*   Updated: 2025/05/14 16:38:45 by mikelitoris      ###   ########.fr       */
+/*   Updated: 2025/05/20 15:37:50 by mikelitoris      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,13 @@ ScavTrap::~ScavTrap()
 
 ScavTrap	&ScavTrap::operator=(const ScavTrap &src)
 {
-	_name = src._name;
-	_hitPoints = src._hitPoints;
-	_energyPoints = src._energyPoints;
-	_attackDamage = src._attackDamage;
+	if (this != &src)
+	{
+		_name = src._name;
+		_hitPoints = src._hitPoints;
+		_energyPoints = src._energyPoints;
+		_attackDamage = src._attackDamage;
+	}
 	return (*this);
 }
 
@@ -76,6 +79,6 @@ void	ScavTrap::attack(std::string const &target)
 	}
 	else
 	{
-		std::cout << RED << "ScavTrap " << _name << " is out of hit points! He cannot attack right now." << RESET << std::endl;
+		std::cout << RED << "ScavTrap " << _name << " is out of HP! He cannot attack right now." << RESET << std::endl;
 	}
 }
