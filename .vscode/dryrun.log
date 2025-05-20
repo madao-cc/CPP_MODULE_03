@@ -1,0 +1,6 @@
+make --dry-run --keep-going --print-directory
+make: Entering directory '/home/mikelitoris/42/Rank_4/CPPs/CPP_MODULE_03'
+make: Leaving directory '/home/mikelitoris/42/Rank_4/CPPs/CPP_MODULE_03'
+ 
+make: *** No targets specified and no makefile found.  Stop.
+

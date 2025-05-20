@@ -6,7 +6,7 @@
 /*   By: mikelitoris <mikelitoris@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 10:35:41 by mikelitoris       #+#    #+#             */
-/*   Updated: 2025/03/18 11:41:05 by mikelitoris      ###   ########.fr       */
+/*   Updated: 2025/05/14 16:38:45 by mikelitoris      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,4 +57,25 @@ void	ScavTrap::guardGate()
 	}
 	std::cout << YELLOW << "ScavTrap " << _name << " has entered in Gate keeper mode!" << RESET << std::endl;
 	std::cout << YELLOW << "After a while, ScavTrap " << _name << " noticed that the gate doesn't exist, and came back to battle mode!" << RESET << std::endl;
+}
+
+void	ScavTrap::attack(std::string const &target)
+{
+	if (this->_hitPoints > 0)
+	{
+		if (this->_energyPoints > 0)
+		{
+			
+			std::cout << YELLOW << "ScavTrap " << _name << " ferociously lunges at " << target << ", dealing a devastating " << _attackDamage << " points of damage! Watch out..." << RESET << std::endl;
+			this->_energyPoints--;
+		}
+		else
+		{
+			std::cout << RED << "ScavTrap " << _name << " is out of energy! He cannot attack right now." << RESET << std::endl;
+		}
+	}
+	else
+	{
+		std::cout << RED << "ScavTrap " << _name << " is out of hit points! He cannot attack right now." << RESET << std::endl;
+	}
 }

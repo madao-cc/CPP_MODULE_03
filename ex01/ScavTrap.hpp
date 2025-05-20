@@ -6,7 +6,7 @@
 /*   By: mikelitoris <mikelitoris@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 10:32:10 by mikelitoris       #+#    #+#             */
-/*   Updated: 2025/03/18 10:50:46 by mikelitoris      ###   ########.fr       */
+/*   Updated: 2025/05/14 16:31:52 by mikelitoris      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ class	ScavTrap: public ClapTrap
 		ScavTrap	&operator=(const ScavTrap &src);
 		// Member functions
 		void	guardGate();
+		void	attack(std::string const &target);
 };
 
 #endif

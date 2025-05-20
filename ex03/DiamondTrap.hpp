@@ -6,7 +6,7 @@
 /*   By: mikelitoris <mikelitoris@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/19 12:08:24 by mikelitoris       #+#    #+#             */
-/*   Updated: 2025/03/19 12:18:44 by mikelitoris      ###   ########.fr       */
+/*   Updated: 2025/05/14 17:33:53 by mikelitoris      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,9 @@ class	DiamondTrap : public ScavTrap, public FragTrap
 		DiamondTrap	&operator=(const DiamondTrap &src);
 		// Member functions
 		void	whoAmI();
-		void	attack(std::string const & target);
+		void	attack(std::string const & target); // Need to use the ScavTrap attack function
 	private:
-		std::string	_name;
+		std::string	name;
 };
 
 #endif

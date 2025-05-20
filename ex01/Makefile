@@ -15,7 +15,7 @@ SRCS		:= main.cpp	\
 		ClapTrap.cpp	\
 		ScavTrap.cpp	\
 
-OBJS		:= $(SRCS:$(SRCDIR)/%.cpp=$(OBJDIR)/%.o)
+OBJS		:= $(SRCS:%.cpp=$(OBJDIR)/%.o)
 
 # ==== Colors ====
 RESET		:= \033[0m
@@ -37,7 +37,7 @@ $(NAME): $(OBJS)
 	@echo -e "$(BOLD)$(GREEN)[✓] Build successful!$(RESET)"
 
 # Object files
-$(OBJDIR)/%.o: $(SRCDIR)/%.cpp | $(OBJDIR)
+$(OBJDIR)/%.o: %.cpp | $(OBJDIR)
 	@echo -e "$(BOLD)$(YELLOW)[Compiling]$(RESET) $<"
 	@$(CXX) $(CXXFLAGS) -I$(INCDIR) -c $< -o $@
 

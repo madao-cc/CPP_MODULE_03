@@ -6,7 +6,7 @@
 /*   By: mikelitoris <mikelitoris@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 12:05:03 by mikelitoris       #+#    #+#             */
-/*   Updated: 2025/03/19 12:13:19 by mikelitoris      ###   ########.fr       */
+/*   Updated: 2025/05/14 16:55:25 by mikelitoris      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ class	FragTrap: virtual public ClapTrap
 		FragTrap	&operator=(const FragTrap &src);
 		// Member functions
 		void	highFivesGuys(void);
+		void	attack(std::string const &target);
 };
 
 #endif

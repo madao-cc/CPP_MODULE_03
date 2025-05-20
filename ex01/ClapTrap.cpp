@@ -6,7 +6,7 @@
 /*   By: mikelitoris <mikelitoris@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/17 15:35:24 by mikelitoris       #+#    #+#             */
-/*   Updated: 2025/03/17 17:06:51 by mikelitoris      ###   ########.fr       */
+/*   Updated: 2025/05/14 16:33:44 by mikelitoris      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ void	ClapTrap::takeDamage(unsigned int amount)
 {
 	if (this->_hitPoints <= 0)
 	{
-		std::cout << RED << "Damn! ClapTrap " << _name << " is already fainted! Yet you choose to attack it still." << RESET << std::endl;
+		std::cout << RED << "Damn! ClapTrap " << _name << " is already fainted! The dead corpse endured the hit" << RESET << std::endl;
 	}
 	std::cout << RED << "ClapTrap " << _name << " takes " << amount << " points of damage!" << RESET << std::endl;
 	this->_hitPoints -= amount;
