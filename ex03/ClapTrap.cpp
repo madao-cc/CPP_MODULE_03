@@ -6,7 +6,7 @@
 /*   By: mikelitoris <mikelitoris@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/17 15:35:24 by mikelitoris       #+#    #+#             */
-/*   Updated: 2025/03/17 17:06:51 by mikelitoris      ###   ########.fr       */
+/*   Updated: 2025/05/20 16:01:00 by mikelitoris      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,13 @@ ClapTrap::~ClapTrap()
 
 ClapTrap	&ClapTrap::operator=(const ClapTrap &src)
 {
-	_name = src._name;
-	_hitPoints = src._hitPoints;
-	_energyPoints = src._energyPoints;
-	_attackDamage = src._attackDamage;
+	if (this != &src)
+	{
+		_name = src._name;
+		_hitPoints = src._hitPoints;
+		_energyPoints = src._energyPoints;
+		_attackDamage = src._attackDamage;
+	}
 	return (*this);
 }
 
@@ -58,7 +61,7 @@ void	ClapTrap::attack(std::string const &target)
 	}
 	else
 	{
-		std::cout << RED << "ClapTrap " << _name << " is out of hit points! He cannot attack right now." << RESET << std::endl;
+		std::cout << RED << "ClapTrap " << _name << " is out of HP! He cannot attack right now." << RESET << std::endl;
 	}
 }
 
@@ -79,7 +82,7 @@ void	ClapTrap::takeDamage(unsigned int amount)
 
 void	ClapTrap::beRepaired(unsigned int amount)
 {
-	if (this->_hitPoints == 0)
+	if (this->_hitPoints <= 0)
 	{
 		std::cout << RED << "ClapTrap " << _name << " is already fainted! You cannot repair it." << RESET << std::endl;
 		return ;

@@ -6,7 +6,7 @@
 /*   By: mikelitoris <mikelitoris@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/19 12:11:18 by mikelitoris       #+#    #+#             */
-/*   Updated: 2025/05/14 17:33:58 by mikelitoris      ###   ########.fr       */
+/*   Updated: 2025/05/20 16:13:18 by mikelitoris      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ DiamondTrap::DiamondTrap() : ClapTrap("Default_Diamond_clap_name"), ScavTrap(), 
 	std::cout << YELLOW << "DiamondTrap " << name << " is walking by (Default way)" << RESET << std::endl;
 }
 
-DiamondTrap::DiamondTrap(std::string nome) : ClapTrap(name + "_clap_name"), ScavTrap(), FragTrap()
+DiamondTrap::DiamondTrap(std::string nome) : ClapTrap(nome + "_clap_name"), ScavTrap(), FragTrap()
 {
 	name = nome;
 	_hitPoints = FragTrap::_hitPoints;
