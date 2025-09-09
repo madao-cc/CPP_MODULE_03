@@ -4,8 +4,6 @@
 
 This module focuses on C++ inheritance. You’ll learn how to create and extend classes, how to chain constructors/destructors, and even explore multiple inheritance. Through four exercises, you will build a hierarchy of robot-like classes: starting with a base class (`ClapTrap`), and then extending it with `ScavTrap`, `FragTrap`, and finally merging behaviors in a multiple-inheritance monster called `DiamondTrap`.
 
-*(Subject reference: citeturn4file0)*
-
 ---
 
 ## Table of Contents
@@ -20,13 +18,13 @@ This module focuses on C++ inheritance. You’ll learn how to create and extend 
 
 ---
 
-## Introduction & Overview
+## Overview
 
 In this module, you build a family of robot classes that demonstrate real-world uses of inheritance. You start with a simple base class—`ClapTrap`—which encapsulates basic characteristics (name, hit points, energy, and attack damage) and actions (attack, take damage, and repair). Later, you derive new classes from `ClapTrap` that customize these attributes and behaviors to create more specialized robots. Finally, you experiment with multiple inheritance in the creation of `DiamondTrap`, which combines behaviors from both `FragTrap` and `ScavTrap`.
 
 ---
 
-## Key Inheritance Concepts
+## Inheritance Concepts
 
 ### Inheritance Hierarchy & Constructor Chaining
 
@@ -63,89 +61,6 @@ It must also provide three public methods:
 
 Each action must print a message that details what happens (e.g., when a ClapTrap attacks, it prints its name, target, and damage).
 
-### Example Code
-
-**ClapTrap.hpp**
-```cpp
-#ifndef CLAPTRAP_HPP
-#define CLAPTRAP_HPP
-
-#include <iostream>
-#include <string>
-
-class ClapTrap {
-protected:
-    std::string name;
-    unsigned int hitPoints;
-    unsigned int energyPoints;
-    unsigned int attackDamage;
-public:
-    ClapTrap(const std::string &name);
-    ClapTrap(const ClapTrap &other);
-    ClapTrap &operator=(const ClapTrap &other);
-    ~ClapTrap();
-
-    void attack(const std::string &target);
-    void takeDamage(unsigned int amount);
-    void beRepaired(unsigned int amount);
-};
-
-#endif
-```
-
-**ClapTrap.cpp**
-```cpp
-#include "ClapTrap.hpp"
-
-ClapTrap::ClapTrap(const std::string &name) 
-    : name(name), hitPoints(10), energyPoints(10), attackDamage(0) {
-    std::cout << "ClapTrap " << name << " created." << std::endl;
-}
-
-ClapTrap::ClapTrap(const ClapTrap &other) {
-    std::cout << "ClapTrap copy constructor called." << std::endl;
-    *this = other;
-}
-
-ClapTrap &ClapTrap::operator=(const ClapTrap &other) {
-    if (this != &other) {
-        name = other.name;
-        hitPoints = other.hitPoints;
-        energyPoints = other.energyPoints;
-        attackDamage = other.attackDamage;
-    }
-    std::cout << "ClapTrap copy assignment operator called." << std::endl;
-    return *this;
-}
-
-ClapTrap::~ClapTrap() {
-    std::cout << "ClapTrap " << name << " destroyed." << std::endl;
-}
-
-void ClapTrap::attack(const std::string &target) {
-    if (energyPoints > 0 && hitPoints > 0) {
-        energyPoints--;  // Each attack costs one energy point
-        std::cout << "ClapTrap " << name << " attacks " << target 
-                  << ", causing " << attackDamage << " points of damage!" << std::endl;
-    }
-}
-
-void ClapTrap::takeDamage(unsigned int amount) {
-    hitPoints = (amount >= hitPoints ? 0 : hitPoints - amount);
-    std::cout << "ClapTrap " << name << " takes " << amount 
-              << " points of damage!" << std::endl;
-}
-
-void ClapTrap::beRepaired(unsigned int amount) {
-    if (energyPoints > 0 && hitPoints > 0) {
-        hitPoints += amount;
-        energyPoints--;
-        std::cout << "ClapTrap " << name << " is repaired by " << amount 
-                  << " points!" << std::endl;
-    }
-}
-```
-
 ### Explanation
 
 - **Encapsulation:**  
@@ -173,67 +88,6 @@ Create a derived class **ScavTrap** from ClapTrap. A ScavTrap represents an upgr
 - Implement a special function: `guardGate();` which prints that the ScavTrap is in "Gate keeper" mode.
 - Modify the `attack()` method to print a message that distinguishes it from the base class.
 
-### Example Code
-
-**ScavTrap.hpp**
-```cpp
-#ifndef SCAVTRAP_HPP
-#define SCAVTRAP_HPP
-
-#include "ClapTrap.hpp"
-
-class ScavTrap : public ClapTrap {
-public:
-    ScavTrap(const std::string &name);
-    ScavTrap(const ScavTrap &other);
-    ScavTrap &operator=(const ScavTrap &other);
-    ~ScavTrap();
-
-    void attack(const std::string &target);
-    void guardGate();
-};
-
-#endif
-```
-
-**ScavTrap.cpp**
-```cpp
-#include "ScavTrap.hpp"
-
-ScavTrap::ScavTrap(const std::string &name) : ClapTrap(name) {
-    hitPoints = 100;
-    energyPoints = 50;
-    attackDamage = 20;
-    std::cout << "ScavTrap " << name << " created." << std::endl;
-}
-
-ScavTrap::ScavTrap(const ScavTrap &other) : ClapTrap(other) {
-    std::cout << "ScavTrap copy constructor called." << std::endl;
-}
-
-ScavTrap &ScavTrap::operator=(const ScavTrap &other) {
-    ClapTrap::operator=(other);
-    std::cout << "ScavTrap copy assignment operator called." << std::endl;
-    return *this;
-}
-
-ScavTrap::~ScavTrap() {
-    std::cout << "ScavTrap " << name << " destroyed." << std::endl;
-}
-
-void ScavTrap::attack(const std::string &target) {
-    if (energyPoints > 0 && hitPoints > 0) {
-        energyPoints--;
-        std::cout << "ScavTrap " << name << " aggressively attacks " << target
-                  << ", causing " << attackDamage << " points of damage!" << std::endl;
-    }
-}
-
-void ScavTrap::guardGate() {
-    std::cout << "ScavTrap " << name << " is now in Gate keeper mode!" << std::endl;
-}
-```
-
 ### Explanation
 
 - **Constructor Chaining:**  
@@ -259,67 +113,6 @@ Implement the **FragTrap** class, a second derivative of ClapTrap. FragTrap has 
   - **Energy Points:** 100
   - **Attack Damage:** 30
 - Implement a special function: `highFivesGuys();` which prompts a high-five.
-
-### Example Code
-
-**FragTrap.hpp**
-```cpp
-#ifndef FRAGTRAP_HPP
-#define FRAGTRAP_HPP
-
-#include "ClapTrap.hpp"
-
-class FragTrap : public ClapTrap {
-public:
-    FragTrap(const std::string &name);
-    FragTrap(const FragTrap &other);
-    FragTrap &operator=(const FragTrap &other);
-    ~FragTrap();
-
-    void attack(const std::string &target);
-    void highFivesGuys(void);
-};
-
-#endif
-```
-
-**FragTrap.cpp**
-```cpp
-#include "FragTrap.hpp"
-
-FragTrap::FragTrap(const std::string &name) : ClapTrap(name) {
-    hitPoints = 100;
-    energyPoints = 100;
-    attackDamage = 30;
-    std::cout << "FragTrap " << name << " created." << std::endl;
-}
-
-FragTrap::FragTrap(const FragTrap &other) : ClapTrap(other) {
-    std::cout << "FragTrap copy constructor called." << std::endl;
-}
-
-FragTrap &FragTrap::operator=(const FragTrap &other) {
-    ClapTrap::operator=(other);
-    std::cout << "FragTrap copy assignment operator called." << std::endl;
-    return *this;
-}
-
-FragTrap::~FragTrap() {
-    std::cout << "FragTrap " << name << " destroyed." << std::endl;
-}
-
-void FragTrap::attack(const std::string &target) {
-    if (energyPoints > 0 && hitPoints > 0) {
-        energyPoints--;
-        std::cout << "FragTrap " << name << " launches an attack on " << target
-                  << ", causing " << attackDamage << " points of damage!" << std::endl;
-    }
-}
-
-void FragTrap::highFivesGuys(void) {
-    std::cout << "FragTrap " << name << " requests a positive high five!" << std::endl;
-}
-```
 
 ### Explanation
 
@@ -351,70 +144,6 @@ Implement **DiamondTrap**, a class that combines aspects of both FragTrap and Sc
   - Use ScavTrap’s implementation of the `attack()` method.
   - Include a special method `whoAmI()` that prints both its own name and its ClapTrap name.
 
-### Example Code
-
-**DiamondTrap.hpp**
-```cpp
-#ifndef DIAMONDTRAP_HPP
-#define DIAMONDTRAP_HPP
-
-#include "FragTrap.hpp"
-#include "ScavTrap.hpp"
-#include <string>
-
-class DiamondTrap : public FragTrap, public ScavTrap {
-private:
-    std::string name; // DiamondTrap's own name
-public:
-    DiamondTrap(const std::string &name);
-    DiamondTrap(const DiamondTrap &other);
-    DiamondTrap &operator=(const DiamondTrap &other);
-    ~DiamondTrap();
-
-    void whoAmI();
-    // Inherit attack() from ScavTrap
-};
-
-#endif
-```
-
-**DiamondTrap.cpp**
-```cpp
-#include "DiamondTrap.hpp"
-
-DiamondTrap::DiamondTrap(const std::string &name) 
-    : ClapTrap(name + "_clap_name"), FragTrap(name), ScavTrap(name), name(name) {
-    // Note: The ClapTrap constructor is explicitly called with the modified name.
-    // FragTrap and ScavTrap constructors further initialize other attributes.
-    std::cout << "DiamondTrap " << this->name << " created." << std::endl;
-}
-
-DiamondTrap::DiamondTrap(const DiamondTrap &other)
-    : ClapTrap(other.name + "_clap_name"), FragTrap(other), ScavTrap(other), name(other.name) {
-    std::cout << "DiamondTrap copy constructor called." << std::endl;
-}
-
-DiamondTrap &DiamondTrap::operator=(const DiamondTrap &other) {
-    if (this != &other) {
-        // Assign members as needed. Note: assignment in multiple inheritance must be handled carefully.
-        ClapTrap::operator=(other);
-        this->name = other.name;
-    }
-    std::cout << "DiamondTrap copy assignment operator called." << std::endl;
-    return *this;
-}
-
-DiamondTrap::~DiamondTrap() {
-    std::cout << "DiamondTrap " << name << " destroyed." << std::endl;
-}
-
-void DiamondTrap::whoAmI() {
-    // Outputs its own name and its ClapTrap name.
-    std::cout << "DiamondTrap name: " << name 
-              << ", ClapTrap name: " << ClapTrap::name << std::endl;
-}
-```
-
 ### Explanation
 
 - **Multiple Inheritance:**  
@@ -426,6 +155,4 @@ void DiamondTrap::whoAmI() {
 
 ---
 
-## Conclusion
-
-Happy coding!
+Happy coding and hope to see you for the next project's explanation
